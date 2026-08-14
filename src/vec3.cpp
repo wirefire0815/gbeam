@@ -1,4 +1,5 @@
 #include "vec3.h"
+#include <cmath>
 
 Vec3::Vec3() : e{0, 0, 0} {}
 

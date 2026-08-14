@@ -1,8 +1,6 @@
 #pragma once
 
-#include <cmath>
-#include <iostream>
-
+#include <ostream>
 class Vec3 {
 public:
     double e[3];
@@ -25,7 +23,10 @@ public:
     double length_squared() const;
 };
 
+// point3 and Point3 are aliases for vec3, useful for geometric clarity in code.
+using point3 = Vec3;
 using Point3 = Vec3;
+
 
 std::ostream& operator<<(std::ostream& out, const Vec3& v);
 Vec3 operator+(const Vec3& u, const Vec3& v);
