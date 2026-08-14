@@ -15,7 +15,7 @@ bool Sphere::hit(const Ray& r, Interval ray_t, HitRecord& rec) const {
     auto sqrtd = std::sqrt(discriminant);
 
     auto root = (h - sqrtd) / a;
-    if (ray_t.surrounds(root)) {
+    if (!ray_t.surrounds(root)) {
         root = (h + sqrtd) / a;
         if (!ray_t.surrounds(root))
             return false;
