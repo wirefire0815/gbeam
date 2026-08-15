@@ -1,0 +1,31 @@
+{
+  "date": "2026-08-15T00:33:34.164046893+02:00",
+  "data": {
+    "/home/kingkugi/private/gbeam/CMakeLists.txt": [
+      {
+        "label": "CMAKE_CXX_STANDARD",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/kingkugi/private/gbeam/CMakeLists.txt"
+      },
+      {
+        "label": "CMAKE_CXX_STANDARD_REQUIRED",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/kingkugi/private/gbeam/CMakeLists.txt"
+      },
+      {
+        "label": "CMAKE_CXX_EXTENSIONS",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/kingkugi/private/gbeam/CMakeLists.txt"
+      },
+      {
+        "label": "EXTERNAL",
+        "kind": 12,
+        "detail": "Value",
+        "documentation": "defined variable\nfrom: /home/kingkugi/private/gbeam/CMakeLists.txt"
+      }
+    ]
+  }
+}
