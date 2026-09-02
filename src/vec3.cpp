@@ -1,4 +1,5 @@
 #include "vec3.h"
+#include "gbeam.h"
 #include <cmath>
 
 Vec3::Vec3() : e{0, 0, 0} {}
@@ -37,6 +38,32 @@ double Vec3::length() const {
 
 double Vec3::length_squared() const {
     return e[0] * e[0] + e[1] * e[1] + e[2] * e[2];
+}
+
+Vec3 Vec3::random() {
+    return Vec3(random_double(), random_double(), random_double());
+}
+
+Vec3 Vec3::random(double min, double max) {
+    return Vec3(random_double(min, max), random_double(min, max), random_double(min, max));
+}
+
+Vec3 random_unit_vector() {
+    while (true) {
+        auto p = Vec3::random(-1,1);
+        auto lensq = p.length_squared();
+        if (1e-160 < lensq && lensq <= 1) {
+            return p / sqrt(lensq);
+        }
+    }
+}
+
+Vec3 random_on_hemisphere(const Vec3& normal) {
+    Vec3 on_unit_sphere = random_unit_vector();
+    if (dot(on_unit_sphere, normal) > 0.0)
+        return on_unit_sphere;
+    else
+        return -on_unit_sphere;
 }
 
 std::ostream& operator<<(std::ostream& out, const Vec3& v) {

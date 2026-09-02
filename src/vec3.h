@@ -1,6 +1,7 @@
 #pragma once
 
 #include <ostream>
+
 class Vec3 {
 public:
     double e[3];
@@ -21,6 +22,10 @@ public:
 
     double length() const;
     double length_squared() const;
+
+    static Vec3 random();
+    static Vec3 random(double min, double max);
+
 };
 
 // point3 and Point3 are aliases for vec3, useful for geometric clarity in code.
@@ -37,3 +42,6 @@ Vec3 operator/(const Vec3& v, double t);
 double dot(const Vec3& u, const Vec3& v);
 Vec3 cross(const Vec3& u, const Vec3& v);
 Vec3 unit_vector(const Vec3& v);
+
+Vec3 random_unit_vector();
+Vec3 random_on_hemisphere(const Vec3& normal);
