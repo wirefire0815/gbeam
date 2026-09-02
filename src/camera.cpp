@@ -52,7 +52,7 @@ Color Camera::ray_color(const Ray& r, int depth, const Hittable& world) const {
     HitRecord rec;
     if (world.hit(r, Interval(0.001, infinity), rec)) {
         Vec3 direction = rec.normal + random_unit_vector();
-        return 0.8 * ray_color(Ray {rec.p, direction}, depth-1, world);
+        return 0.6 * ray_color(Ray {rec.p, direction}, depth-1, world);
     }
 
     Vec3 unit_direction = unit_vector(r.direction());
