@@ -48,6 +48,12 @@ Vec3 Vec3::random(double min, double max) {
     return Vec3(random_double(min, max), random_double(min, max), random_double(min, max));
 }
 
+bool Vec3::near_zero() const {
+    // Return true if the vector is close to zero in all dimensions.
+    auto s = 1e-8;
+    return (std::fabs(e[0]) < s) && (std::fabs(e[1]) < s) && (std::fabs(e[2]) < s);
+}
+
 Vec3 random_unit_vector() {
     while (true) {
         auto p = Vec3::random(-1,1);
@@ -64,6 +70,10 @@ Vec3 random_on_hemisphere(const Vec3& normal) {
         return on_unit_sphere;
     else
         return -on_unit_sphere;
+}
+
+Vec3 reflect(const Vec3& v, const Vec3& n) {
+    return v - 2*dot(v,n)*n;
 }
 
 std::ostream& operator<<(std::ostream& out, const Vec3& v) {

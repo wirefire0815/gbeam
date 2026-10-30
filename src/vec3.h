@@ -23,6 +23,8 @@ public:
     double length() const;
     double length_squared() const;
 
+    bool near_zero() const;
+
     static Vec3 random();
     static Vec3 random(double min, double max);
 
@@ -45,3 +47,4 @@ Vec3 unit_vector(const Vec3& v);
 
 Vec3 random_unit_vector();
 Vec3 random_on_hemisphere(const Vec3& normal);
+Vec3 reflect(const Vec3& v, const Vec3& n);
